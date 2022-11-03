@@ -40,9 +40,6 @@ HTML, CSS, Bootstrap, Javascript, MySQL
 
 | Color            | Hex                                                              |
 | ---------------- | ---------------------------------------------------------------- |
-| Prussian Blue    | ![#00274C](https://www.htmlcsscolor.com/hex/00274C) #00274C      |
-| Cobalt           | ![#004F98](https://www.htmlcsscolor.com/hex/004F98) #004F98      |
-| Tangerine Yellow | ![#FFCB0B](https://www.htmlcsscolor.com/hex/FFCB0B) #FFCB0B      |
-| TEST             | ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) #FFCB0B |
-
-- `#f03c15`
+| Prussian Blue    | ![#00274C](https://placehold.co/15x15/00274C/00274C.png) #00274C |
+| Cobalt           | ![#004F98](https://placehold.co/15x15/004F98/004F98.png) #004F98 |
+| Tangerine Yellow | ![#FFCB0B](https://placehold.co/15x15/FFCB0B/FFCB0B.png) #FFCB0B |
