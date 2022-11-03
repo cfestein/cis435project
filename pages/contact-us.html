@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="icon" type="image/M-icon" href="../images/favicon.ico" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/contact-us.css" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="size">
+    <div class="container mt-5">
+      <div class="row mb-2 justify-content-center">
+        <div class="col-md-10 b">
+          <div
+            class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 card"
+          >
+            <div class="col p-4 d-flex flex-column position-static">
+              <h3 class="mb-2 lato-bold-blue-whale-27px">
+                Suggestions Welcome!
+              </h3>
+              <div class="mb-1 text-muted">
+                <i class="bi bi-geo-alt me-2"></i>
+                4901 Evergreen, Dearborn, MI 48128
+              </div>
+              <div class="mb-1 text-muted">
+                <i class="bi bi-telephone me-2 mb-5"></i>(313) 583-6330
+              </div>
+
+              <form class="form-signin w-100 m-auto">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="floatingName"
+                    placeholder="name"
+                  />
+                  <label class="text-muted" for="floatingName">Name</label>
+                </div>
+                <div class="form-floating">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="name@example.com"
+                  />
+                  <label class="text-muted" for="floatingInput"
+                    >Email address</label
+                  >
+                </div>
+              </form>
+              <form class="form-signin w-100 m-auto">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="floatingSubject"
+                    placeholder="subject"
+                  />
+                  <label class="text-muted" for="floatingSubject"
+                    >Subject</label
+                  >
+                </div>
+                <div class="form-floating">
+                  <textarea
+                    style="
+                      height: 145px;
+                      border-top-left-radius: 0;
+                      border-top-right-radius: 0;
+                    "
+                    class="form-control"
+                    type="message"
+                    id="floatingMessage"
+                    cols="30"
+                    rows="5"
+                    placeholder="Enter your message here"
+                  ></textarea>
+                  <label class="text-muted" for="floatingMessage"
+                    >Your Message</label
+                  >
+                </div>
+              </form>
+              <button class="btn btn-primary">Send</button>
+            </div>
+            <div class="col-md-6 d-none d-lg-block">
+              <img
+                class=""
+                src="../images/gs_campus_map.png"
+                alt=""
+                height="500"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,287 @@
+
+  .shopping-cart{
+	  padding-bottom: 50px;
+	  font-family: 'Noto Sans', sans-serif;
+	  
+  }
+  
+  .shopping-cart.dark{
+	  background-color: #ffffff;
+  }
+  
+  .shopping-cart .content{
+	  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+	  background-color: white;
+  }
+  
+  .shopping-cart .block-heading{
+	  
+	  padding-top: 50px;
+	  margin-bottom: 40px;
+	  text-align: center;
+  }
+  
+  .shopping-cart .block-heading p{
+	  text-align: center;
+	  max-width: 420px;
+	  margin: auto;
+	  opacity:0.7;
+  }
+  
+  .shopping-cart .dark .block-heading p{
+	  opacity:0.8;
+  }
+  
+  /* YOUR CART COLOR*/
+  .shopping-cart .block-heading h1,
+  .shopping-cart .block-heading h2,
+  .shopping-cart .block-heading h3 {
+	  margin-bottom:1.2rem;
+	  color: rgba(0, 39, 76, 1);
+  }
+  
+  .shopping-cart .items{
+	  margin: auto;
+  }
+  
+  .shopping-cart .items .product{
+	  margin-bottom: 20px;
+	  padding-top: 20px;
+	  padding-bottom: 20px;
+  }
+  
+  .shopping-cart .items .product .info{
+	  padding-top: 0px;
+	  text-align: center;
+  }
+  
+  .shopping-cart .items .product .info .product-name{
+	  font-weight: 600;
+  }
+  
+  .shopping-cart .items .product .info .product-name .product-info{
+	  font-size: 14px;
+	  margin-top: 15px;
+  }
+  
+  .shopping-cart .items .product .info .product-name .product-info .value{
+	  font-weight: 400;
+  }
+  
+  .shopping-cart .items .product .info .quantity .quantity-input{
+	  margin: auto;
+	  width: 80px;
+  }
+  
+  .shopping-cart .items .product .info .price{
+	  margin-top: 15px;
+	  font-weight: bold;
+	  font-size: 22px;
+   }
+  
+  .shopping-cart .summary{
+	  border-top: 2px solid #032246;
+	  background-color: #f7fbff;
+	  height: 100%;
+	  padding: 30px;
+  }
+  
+  .shopping-cart .summary h3{
+	  text-align: center;
+	  font-size: 1.3em;
+	  font-weight: 600;
+	  padding-top: 20px;
+	  padding-bottom: 20px;
+  }
+  
+  .shopping-cart .summary .summary-item:not(:last-of-type){
+	  padding-bottom: 10px;
+	  padding-top: 10px;
+	  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .shopping-cart .summary .text{
+	  font-size: 1em;
+	  font-weight: 600;
+  }
+  
+  .shopping-cart .summary .price{
+	  font-size: 1em;
+	  float: right;
+  }
+  
+  
+  .shopping-cart .summary button{
+	  background-color: rgba(0, 39, 76, 1);
+	  margin-top: 20px;
+  }
+  
+  @media (min-width: 768px) {
+	  .shopping-cart .items .product .info {
+		  padding-top: 25px;
+		  text-align: left; 
+	  }
+  
+	  .shopping-cart .items .product .info .price {
+		  font-weight: bold;
+		  font-size: 22px;
+		  top: 17px; 
+	  }
+  
+	  .shopping-cart .items .product .info .quantity {
+		  text-align: center; 
+	  }
+	  .shopping-cart .items .product .info .quantity .quantity-input {
+		  padding: 4px 10px;
+		  text-align: center; 
+	  }
+  }
+  
+  :root {
+	--black: rgba(0, 0, 0, 1);
+	--blue-whale: rgba(0, 39, 76, 1);
+	--blue-whale-hover: rgb(0, 79, 152);
+	--masala: rgba(61, 61, 61, 1);
+	--ship-gray: rgba(62, 62, 62, 1);
+	--ship-gray2: rgba(63, 63, 63, 1);
+	--mountain-mist: rgba(149, 149, 149, 1);
+	--mercury: rgba(228, 228, 228, 1);
+	--baby-powder: rgba(252, 252, 252, 1);
+	--supernova: rgba(255, 203, 11, 1);
+	--white: rgba(255, 255, 255, 1);
+  
+	--font-size-s: 14px;
+	--font-size-m: 16px;
+	--font-size-l: 18px;
+	--font-size-xl: 26px;
+	--font-size-xxl: 27px;
+	--font-size-xxxl: 35px;
+	--font-size-xxxxl: 63px;
+  
+	--font-family-lato: "Lato";
+	--font-family-noto_sans: "Noto Sans";
+  }
+  
+  /* Fonts */
+  .lato-light-blue-whale-63px {
+	color: var(--blue-whale);
+	font-family: var(--font-family-lato);
+	font-size: var(--font-size-xxxxl);
+	font-weight: 300;
+	font-style: normal;
+  }
+  
+  .lato-bold-blue-whale-18px {
+	color: var(--blue-whale);
+	font-family: var(--font-family-lato);
+	font-size: var(--font-size-l);
+	font-weight: 700;
+	font-style: normal;
+  }
+  
+  .lato-bold-blue-whale-26px {
+	color: var(--blue-whale);
+	font-family: var(--font-family-lato);
+	font-size: var(--font-size-xl);
+	font-weight: 700;
+	font-style: normal;
+  }
+  
+  .lato-light-white-35px {
+	color: var(--white);
+	font-family: var(--font-family-lato);
+	font-size: var(--font-size-xxxl);
+	font-weight: 300;
+	font-style: normal;
+  }
+  
+  .lato-light-white-26px {
+	color: var(--white);
+	font-family: var(--font-family-lato);
+	font-size: var(--font-size-xl);
+	font-weight: 300;
+	font-style: normal;
+  }
+  
+  .lato-light-white-18px {
+	color: var(--white);
+	font-family: var(--font-family-lato);
+	font-size: var(--font-size-l);
+	font-weight: 300;
+	font-style: normal;
+  }
+  
+  /* Active Link is Darker */
+  .nav-link.active {
+	color: var(--black);
+  }
+  
+  .nav-link.active:hover {
+	color: var(--blue-whale-hover);
+  }
+  
+  /* All cards the same size */
+  .card-img-top {
+	width: 100%;
+	height: 15vw;
+	object-fit: cover;
+  }
+  
+  /* Change button color to match UofM theme */
+  .btn-primary,
+  .btn-primary:visited {
+	background-color: var(--blue-whale) !important;
+	color: var(--white) !important;
+  }
+  
+  .btn-primary:hover {
+	background-color: var(--blue-whale-hover) !important;
+  }
+  
+  /* Background Image */
+  .bground-img {
+	opacity: 25%;
+  }
+  
+  /* Address, Hours, and Location */
+  .location {
+	background-color: var(--blue-whale);
+	color: var(--white);
+  }
+  
+  /* Footer */
+  .footer {
+	background-color: var(--supernova);
+	color: var(--blue-whale);
+  }
+  
+  /* Center Font in Carousel */
+  .carousel-caption {
+	top: 50%;
+	transform: translateY(-50%);
+  }
+  
+  /* Carousel Height */
+  .carousel-item {
+	height: 50rem;
+  }
+  
+  /**** Responsive CSS ****/
+  @media (min-width: 40em) {
+	.carousel-caption p {
+	  margin-bottom: 1.25rem;
+	  font-size: 1.25rem;
+	  line-height: 1.4;
+	}
+  
+	.featurette-heading {
+	  font-size: 50px;
+	}
+  }
+  
+  @media (min-width: 62em) {
+	.featurette-heading {
+	  margin-top: 7rem;
+	}
+  }
+  

@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,700|Noto+Sans:700,600");
+
+:root {
+    --black: rgba(0, 0, 0, 1);
+    --blue-whale: rgba(0, 39, 76, 1);
+    --blue-whale-hover: rgb(0, 79, 152);
+    --masala: rgba(61, 61, 61, 1);
+    --ship-gray: rgba(62, 62, 62, 1);
+    --ship-gray2: rgba(63, 63, 63, 1);
+    --mountain-mist: rgba(149, 149, 149, 1);
+    --mercury: rgba(228, 228, 228, 1);
+    --baby-powder: rgba(252, 252, 252, 1);
+    --supernova: rgba(255, 203, 11, 1);
+    --white: rgba(255, 255, 255, 1);
+  
+    --font-size-s: 14px;
+    --font-size-m: 16px;
+    --font-size-l: 18px;
+    --font-size-xl: 26px;
+    --font-size-xxl: 27px;
+    --font-size-xxxl: 35px;
+    --font-size-xxxxl: 63px;
+  
+    --font-family-lato: "Lato";
+    --font-family-noto_sans: "Noto Sans";
+  }
+
+  /* Fonts */
+.lato-light-blue-whale-63px {
+    color: var(--blue-whale);
+    font-family: var(--font-family-lato);
+    font-size: var(--font-size-xxxxl);
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .lato-bold-blue-whale-27px {
+    color: var(--blue-whale);
+    font-family: var(--font-family-lato);
+    font-size: var(--font-size-xxl);
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .lato-bold-blue-whale-18px {
+    color: var(--blue-whale);
+    font-family: var(--font-family-lato);
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .lato-bold-blue-whale-26px {
+    color: var(--blue-whale);
+    font-family: var(--font-family-lato);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .lato-light-white-35px {
+    color: var(--white);
+    font-family: var(--font-family-lato);
+    font-size: var(--font-size-xxxl);
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .lato-light-white-26px {
+    color: var(--white);
+    font-family: var(--font-family-lato);
+    font-size: var(--font-size-xl);
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .lato-light-white-18px {
+    color: var(--white);
+    font-family: var(--font-family-lato);
+    font-size: var(--font-size-l);
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+/* Change button color to match UofM theme */
+.btn-primary,
+.btn-primary:visited {
+  background-color: var(--blue-whale) !important;
+  color: var(--white) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--blue-whale-hover) !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: var(--blue-whale);
+}
+
+.size {
+  background-color: var(--blue-whale);
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+    border-color: var(--supernova);
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="message"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
