@@ -129,6 +129,18 @@
   height: 50rem;
 }
 
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: var(--blue-whale);
+}
+
+.size {
+  background-color: var(--blue-whale);
+}
+
 /**** Responsive CSS ****/
 @media (min-width: 40em) {
   .carousel-caption p {
