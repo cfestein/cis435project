@@ -236,7 +236,8 @@
   }
   
   .btn-primary:hover {
-	background-color: var(--blue-whale-hover) !important;
+	background-color: var(--supernova) !important;
+	color: var(--blue-whale) !important;
   }
   
   /* Background Image */

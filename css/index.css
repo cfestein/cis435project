@@ -98,7 +98,9 @@
 }
 
 .btn-primary:hover {
-  background-color: var(--blue-whale-hover) !important;
+  /* background-color: var(--blue-whale-hover) !important; */
+  background-color: var(--supernova) !important;
+  color: var(--blue-whale) !important;
 }
 
 /* Background Image */
@@ -127,18 +129,6 @@
 /* Carousel Height */
 .carousel-item {
   height: 50rem;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: var(--blue-whale);
-}
-
-.size {
-  background-color: var(--blue-whale);
 }
 
 /**** Responsive CSS ****/
