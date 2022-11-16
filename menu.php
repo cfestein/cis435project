@@ -26,6 +26,31 @@ $statement1->closeCursor();
     <title>Menu - McKinley Café Online</title>
     <link rel="icon" type="image/M-icon" href="images/favicon.ico" />
 
+    <!-- JQuery -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <!-- Add Button Script -->
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function() {
+            $("button").click(function(e) {
+                e.preventDefault();
+                $.ajax({
+                    type: "GET",
+                    url: "http://umd-cis435s1.engin.umd.umich.edu/group9/test.php",
+                    data: {
+                        category_id: $(this).val(), // <- Note: use of 'this' here
+                    },
+                    success: function(result) {
+                        alert('Added to your cart');
+                    },
+                    error: function(result) {
+                        alert('error');
+                    }
+                })
+            });
+        });
+    </script>
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/index.css" />
 
@@ -101,13 +126,12 @@ $statement1->closeCursor();
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     <div class="col">
                         <div class="card shadow-sm h-100">
-                            <img class="bd-placeholder-img card-img-top" height="100" src="images/menu/bacon_jam_apple_chicken.jpg" alt="Chicken-Sandwich" />
+                            <img class="bd-placeholder-img card-img-top" height="100" src="product_images/<?= $products[0]["image"] ?>" alt="Chicken-Sandwich" />
 
                             <div class="card-body">
-                                <h4 class="text-center">Fall is Here</h4>
+                                <h4 class="text-center"><?= $products[0]["product_name"] ?></h4>
                                 <p class="card-text">
-                                    Warm up with our Special Chicken Sandwich with Apple Jam and
-                                    Bacon, served with Sweet Potato Fries.
+                                    <?= $products[0]["description"] ?>
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
@@ -118,7 +142,7 @@ $statement1->closeCursor();
                                             Add
                                         </button>
                                     </div>
-                                    <small class="text-muted">$8.25</small>
+                                    <small class="text-muted"><?= $products[0]["price"] ?></small>
                                 </div>
                             </div>
                         </div>
@@ -129,12 +153,12 @@ $statement1->closeCursor();
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="chicken_sandwichLabel">
-                                        Chicken Sandwich
+                                        <?= $products[0]["product_name"] ?>
                                     </h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <img class="rounded mx-auto d-block" style="width: 90%" src="images/menu/bacon_jam_apple_chicken.jpg" alt="Chicken-Sandwich" />
+                                    <img class="rounded mx-auto d-block" style="width: 90%" src="product_images/<?= $products[0]["image"] ?>" alt="Chicken-Sandwich" />
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
@@ -147,13 +171,12 @@ $statement1->closeCursor();
                     <!-- Modal End -->
                     <div class="col">
                         <div class="card shadow-sm h-100">
-                            <img class="bd-placeholder-img card-img-top" style="width: 100%" src="images/menu/falafel.jpg" alt="falafel" />
+                            <img class="bd-placeholder-img card-img-top" style="width: 100%" src="product_images/<?= $products[1]["image"] ?>" alt="falafel" />
 
                             <div class="card-body">
-                                <h4 class="text-center">Feeling Healthy</h4>
+                                <h4 class="text-center"><?= $products[1]["product_name"] ?></h4>
                                 <p class="card-text">
-                                    Enjoy our Falafel wrap drizzled with fresh tahini, veggies,
-                                    and hummus. Served with our in-house Mediterranean Salad.
+                                    <?= $products[1]["description"] ?>
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
@@ -164,7 +187,7 @@ $statement1->closeCursor();
                                             Add
                                         </button>
                                     </div>
-                                    <small class="text-muted">$6.25</small>
+                                    <small class="text-muted"><?= $products[1]["price"] ?></small>
                                 </div>
                             </div>
                         </div>
