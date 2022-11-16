@@ -540,7 +540,7 @@ $statement1->closeCursor();
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#slimModal">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#slimJimModal">
                                             View
                                         </button>
                                         <button type="button" class="btn btn-sm btn-outline-secondary">
@@ -669,7 +669,6 @@ $statement1->closeCursor();
         </div>
     </section>
     <!-- Menu End -->
-    main>
     <!-- Newsletter -->
     <div class="py-5 text-center container-fluid mb-0 mt-0 location">
         <div class="row py-lg-5">
