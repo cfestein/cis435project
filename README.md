@@ -22,7 +22,7 @@ This project is intended to be used by the following companies:
 
 ## 🛠 Skills
 
-HTML, CSS, Bootstrap, Javascript, MySQL
+HTML, CSS, Bootstrap, Javascript, MySQL, PHP
 
 ## Features
 
@@ -32,14 +32,16 @@ HTML, CSS, Bootstrap, Javascript, MySQL
 
 ## Tech Stack
 
-**Client:** HTML, CSS, Bootstrap, React
+**Client:** HTML, CSS, Bootstrap, PHP, JQuery
 
-**Server:**
+**Server:** Apache2
+
+**Database:** PHPmyAdmin
 
 ## Color Reference
 
-| Color            | Hex                                                              |
-| ---------------- | ---------------------------------------------------------------- |
-| Prussian Blue    | ![#00274C](https://placehold.co/15x15/00274C/00274C.png) #00274C |
-| Cobalt           | ![#004F98](https://placehold.co/15x15/004F98/004F98.png) #004F98 |
-| Tangerine Yellow | ![#FFCB0B](https://placehold.co/15x15/FFCB0B/FFCB0B.png) #FFCB0B |
+| Color            | Hex                                                              | Usage                |
+| ---------------- | ---------------------------------------------------------------- | -------------------- |
+| Prussian Blue    | ![#00274C](https://placehold.co/15x15/00274C/00274C.png) #00274C | Primary Button       |
+| Cobalt           | ![#004F98](https://placehold.co/15x15/004F98/004F98.png) #004F98 |                      |
+| Tangerine Yellow | ![#FFCB0B](https://placehold.co/15x15/FFCB0B/FFCB0B.png) #FFCB0B | Primary Hover Button |
