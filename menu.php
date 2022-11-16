@@ -100,7 +100,7 @@ $statement1->closeCursor();
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100 bground-img" src="images/menu/bagel.jpg" alt="First slide" />
+                    <img class="d-block w-100 bground-img" src="images/background/bagel.jpg" alt="First slide" />
                     <div class="carousel-caption d-none d-md-block">
                         <div class="row py-lg-5">
                             <div class="col-lg-12 col-md-8 mx-auto">
@@ -197,11 +197,11 @@ $statement1->closeCursor();
                         <div class="modal-dialog modal-dialog-centered modal-xl">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="falafelLabel">Falafel</h1>
+                                    <h1 class="modal-title fs-5" id="falafelLabel"><?= $products[1]["product_name"] ?></h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <img class="rounded mx-auto d-block" style="width: 90%" src="images/menu/falafel.jpg" alt="falafel" />
+                                    <img class="rounded mx-auto d-block" style="width: 90%" src="product_images/<?= $products[1]["image"] ?>" alt="falafel" />
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
@@ -214,13 +214,12 @@ $statement1->closeCursor();
                     <!-- Modal End -->
                     <div class="col">
                         <div class="card shadow-sm h-100">
-                            <img class="bd-placeholder-img card-img-top" style="width: 100%" src="images/menu/turnover.jpg" alt="Apple-Turnover" />
+                            <img class="bd-placeholder-img card-img-top" style="width: 100%" src="product_images/<?= $products[2]["image"] ?>" alt="Apple-Turnover" />
 
                             <div class="card-body d-flex flex-column">
-                                <h4 class="text-center">Breakfast 2 Go</h4>
+                                <h4 class="text-center"><?= $products[2]["product_name"] ?></h4>
                                 <p class="card-text">
-                                    Come by and grab an Apple Turnover with a side of fruit, to
-                                    get the day started.
+                                    <?= $products[2]["description"] ?>
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
@@ -231,7 +230,7 @@ $statement1->closeCursor();
                                             Add
                                         </button>
                                     </div>
-                                    <small class="text-muted">$4.00</small>
+                                    <small class="text-muted"><?= $products[2]["price"] ?></small>
                                 </div>
                             </div>
                             <!-- Modal -->
@@ -240,12 +239,12 @@ $statement1->closeCursor();
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h1 class="modal-title fs-5" id="apple_turnoverLabel">
-                                                Apple Turnover
+                                                <?= $products[2]["product_name"] ?>
                                             </h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <img class="rounded mx-auto d-block" style="width: 90%" src="images/menu/turnover.jpg" alt="apple-turnover" />
+                                            <img class="rounded mx-auto d-block" style="width: 90%" src="product_images/<?= $products[2]["image"] ?>" alt="apple-turnover" />
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
@@ -261,13 +260,12 @@ $statement1->closeCursor();
 
                     <div class="col">
                         <div class="card shadow-sm h-100">
-                            <img class="bd-placeholder-img card-img-top" style="width: 100%" src="images/menu/gyro.jpg" alt="gyro" />
+                            <img class="bd-placeholder-img card-img-top" style="width: 100%" src="product_images/<?= $products[3]["image"] ?>" alt="gyro" />
 
                             <div class="card-body">
-                                <h4 class="text-center">Gyro with Greek Salad</h4>
+                                <h4 class="text-center"><?= $products[3]["product_name"] ?></h4>
                                 <p class="card-text">
-                                    Gyro served on Pita, with onion, tomato, and in-house
-                                    tzatziki sauce. Served with a Greek Salad.
+                                    <?= $products[3]["description"] ?>
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
@@ -278,7 +276,7 @@ $statement1->closeCursor();
                                             Add
                                         </button>
                                     </div>
-                                    <small class="text-muted">$7.50</small>
+                                    <small class="text-muted"><?= $products[3]["price"] ?></small>
                                 </div>
                             </div>
                         </div>
@@ -289,12 +287,12 @@ $statement1->closeCursor();
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="gyroLabel">
-                                        Gyro with Greek Salad
+                                        <?= $products[3]["product_name"] ?>
                                     </h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <img class="rounded mx-auto d-block" style="width: 90%" src="images/menu/gyro.jpg" alt="gyro" />
+                                    <img class="rounded mx-auto d-block" style="width: 90%" src="product_images/<?= $products[3]["image"] ?>" alt="gyro" />
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
@@ -307,13 +305,12 @@ $statement1->closeCursor();
                     <!-- Modal End -->
                     <div class="col">
                         <div class="card shadow-sm h-100">
-                            <img class="bd-placeholder-img card-img-top" style="width: 100%" src="images/menu/caprese_salad.jpg" alt="caprese-salad" />
+                            <img class="bd-placeholder-img card-img-top" style="width: 100%" src="product_images/<?= $products[4]["image"] ?>" alt="caprese-salad" />
 
                             <div class="card-body">
-                                <h4 class="text-center">Caprese Salad</h4>
+                                <h4 class="text-center"><?= $products[4]["product_name"] ?></h4>
                                 <p class="card-text">
-                                    You will think you are eating in Italy. Served with veggies,
-                                    mozzarella, & balsamic dressing.
+                                    <?= $products[4]["description"] ?>
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
@@ -324,7 +321,7 @@ $statement1->closeCursor();
                                             Add
                                         </button>
                                     </div>
-                                    <small class="text-muted">$6.00</small>
+                                    <small class="text-muted"><?= $products[4]["price"] ?></small>
                                 </div>
                             </div>
                         </div>
@@ -335,12 +332,12 @@ $statement1->closeCursor();
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="capreseLabel">
-                                        Caprese Salad
+                                        <?= $products[4]["product_name"] ?>
                                     </h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <img class="rounded mx-auto d-block" style="width: 90%" src="images/menu/caprese_salad.jpg" alt="caprese-salad" />
+                                    <img class="rounded mx-auto d-block" style="width: 90%" src="product_images/<?= $products[4]["image"] ?>" alt="caprese-salad" />
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
@@ -353,13 +350,12 @@ $statement1->closeCursor();
                     <!-- Modal End -->
                     <div class="col">
                         <div class="card shadow-sm">
-                            <img class="bd-placeholder-img card-img-top" style="width: 100%" src="images/menu/meatball_pasta.jpg" alt="Meatball Pasta" />
+                            <img class="bd-placeholder-img card-img-top" style="width: 100%" src="product_images/<?= $products[5]["image"] ?>" alt="Meatball Pasta" />
 
                             <div class="card-body">
-                                <h4 class="text-center">Meatball Pasta</h4>
+                                <h4 class="text-center"><?= $products[5]["product_name"] ?></h4>
                                 <p class="card-text">
-                                    Meatballs smothered in our in-house marinara sauce. Covered
-                                    in Romano Cheese and Fresh Basil.
+                                    <?= $products[5]["description"] ?>
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
@@ -370,7 +366,7 @@ $statement1->closeCursor();
                                             Add
                                         </button>
                                     </div>
-                                    <small class="text-muted">$9.25</small>
+                                    <small class="text-muted"><?= $products[5]["price"] ?></small>
                                 </div>
                             </div>
                         </div>
@@ -381,12 +377,12 @@ $statement1->closeCursor();
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="meatballLabel">
-                                        Meatball Pasta
+                                        <?= $products[5]["product_name"] ?>
                                     </h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <img class="rounded mx-auto d-block" style="width: 90%" src="images/menu/meatball_pasta.jpg" alt="meatball_pasta" />
+                                    <img class="rounded mx-auto d-block" style="width: 90%" src="product_images/<?= $products[5]["image"] ?>" alt="meatball_pasta" />
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
@@ -400,13 +396,12 @@ $statement1->closeCursor();
 
                     <div class="col">
                         <div class="card shadow-sm h-100">
-                            <img class="bd-placeholder-img card-img-top" style="width: 100%" src="images/menu/roadhouse_burger.jpg" alt="Roadhouse-Burger" />
+                            <img class="bd-placeholder-img card-img-top" style="width: 100%" src="product_images/<?= $products[6]["image"] ?>" alt="Roadhouse-Burger" />
 
                             <div class="card-body">
-                                <h4 class="text-center">Roadhouse Burger</h4>
+                                <h4 class="text-center"><?= $products[6]["product_name"] ?></h4>
                                 <p class="card-text">
-                                    Angus Burger with Cheddar, Bacon, Onion Rings, topped with a
-                                    Fried Egg, on a Brioche Bun.
+                                    <?= $products[6]["description"] ?>
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
@@ -417,7 +412,7 @@ $statement1->closeCursor();
                                             Add
                                         </button>
                                     </div>
-                                    <small class="text-muted">$7.75</small>
+                                    <small class="text-muted"><?= $products[6]["price"] ?></small>
                                 </div>
                             </div>
                         </div>
@@ -428,12 +423,12 @@ $statement1->closeCursor();
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="burgerLabel">
-                                        Roadhouse Burger
+                                        <?= $products[6]["product_name"] ?>
                                     </h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <img class="rounded mx-auto d-block" style="width: 90%" src="images/menu/roadhouse_burger.jpg" alt="roadhouse_burger" />
+                                    <img class="rounded mx-auto d-block" style="width: 90%" src="product_images/<?= $products[6]["image"] ?>" alt="roadhouse_burger" />
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
@@ -446,13 +441,12 @@ $statement1->closeCursor();
                     <!-- Modal End -->
                     <div class="col">
                         <div class="card shadow-sm h-100">
-                            <img class="bd-placeholder-img card-img-top" style="width: 100%" src="images/menu/chicken_fajita.jpg" alt="chicken-fajita" />
+                            <img class="bd-placeholder-img card-img-top" style="width: 100%" src="product_images/<?= $products[7]["image"] ?>" alt="chicken-fajita" />
 
                             <div class="card-body">
-                                <h4 class="text-center">Chicken Fajitas</h4>
+                                <h4 class="text-center"><?= $products[7]["product_name"] ?></h4>
                                 <p class="card-text">
-                                    Corn Tortillas with marinated Chicken, Pico de Gallo, served
-                                    with a side of Mexican beans.
+                                    <?= $products[7]["description"] ?>
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
@@ -463,7 +457,7 @@ $statement1->closeCursor();
                                             Add
                                         </button>
                                     </div>
-                                    <small class="text-muted">$6.75</small>
+                                    <small class="text-muted"><?= $products[7]["price"] ?></small>
                                 </div>
                             </div>
                         </div>
@@ -474,12 +468,12 @@ $statement1->closeCursor();
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="fajitaLabel">
-                                        Chicken Fajitas
+                                        <?= $products[7]["product_name"] ?>
                                     </h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <img class="rounded mx-auto d-block" style="width: 90%" src="images/menu/chicken_fajita.jpg" alt="chicken-fajita" />
+                                    <img class="rounded mx-auto d-block" style="width: 90%" src="product_images/<?= $products[7]["image"] ?>" alt="chicken-fajita" />
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
@@ -492,14 +486,12 @@ $statement1->closeCursor();
                     <!-- Modal End -->
                     <div class="col">
                         <div class="card shadow-sm">
-                            <img class="bd-placeholder-img card-img-top" style="width: 100%" src="images/menu/fettuccine.jpg" alt="fettuccine-alfredo" />
+                            <img class="bd-placeholder-img card-img-top" style="width: 100%" src="product_images/<?= $products[8]["image"] ?>" alt="fettuccine-alfredo" />
 
                             <div class="card-body">
-                                <h4 class="text-center">Fettuccine Alfedo</h4>
+                                <h4 class="text-center"><?= $products[8]["product_name"] ?></h4>
                                 <p class="card-text">
-                                    Fettuccine noodles covered in Alfredo sauce, covered in
-                                    marinated Chicken, Romano and Parmesean Cheese, served with
-                                    a breadstick.
+                                    <?= $products[8]["description"] ?>
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
@@ -510,7 +502,7 @@ $statement1->closeCursor();
                                             Add
                                         </button>
                                     </div>
-                                    <small class="text-muted">$8.25</small>
+                                    <small class="text-muted"><?= $products[8]["price"] ?></small>
                                 </div>
                             </div>
                         </div>
@@ -521,12 +513,12 @@ $statement1->closeCursor();
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="alfredoLabel">
-                                        Fettuccine Alfedo
+                                        <?= $products[8]["product_name"] ?>
                                     </h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <img class="rounded mx-auto d-block" style="width: 90%" src="images/menu/fettuccine.jpg" alt="fettuccine-alfredo" />
+                                    <img class="rounded mx-auto d-block" style="width: 90%" src="product_images/<?= $products[8]["image"] ?>" alt="fettuccine-alfredo" />
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
@@ -536,6 +528,142 @@ $statement1->closeCursor();
                             </div>
                         </div>
                     </div>
+                    <!-- Modal End -->
+                    <div class="col">
+                        <div class="card shadow-sm h-100">
+                            <img class="bd-placeholder-img card-img-top" style="width: 100%" src="product_images/<?= $products[9]["image"] ?>" alt="slim-jim" />
+
+                            <div class="card-body">
+                                <h4 class="text-center"><?= $products[9]["product_name"] ?></h4>
+                                <p class="card-text">
+                                    <?= $products[9]["description"] ?>
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#slimModal">
+                                            View
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">
+                                            Add
+                                        </button>
+                                    </div>
+                                    <small class="text-muted"><?= $products[9]["price"] ?></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="slimJimModal" tabindex="-1" aria-labelledby="slimJimLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="slimJimLabel">
+                                        <?= $products[9]["product_name"] ?>
+                                    </h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="rounded mx-auto d-block" style="width: 90%" src="product_images/<?= $products[9]["image"] ?>" alt="slim-jim" />
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal End -->
+                    <div class="col">
+                        <div class="card shadow-sm h-100">
+                            <img class="bd-placeholder-img card-img-top" style="width: 100%" src="product_images/<?= $products[10]["image"] ?>" alt="nacho-power-bowl" />
+
+                            <div class="card-body">
+                                <h4 class="text-center"><?= $products[10]["product_name"] ?></h4>
+                                <p class="card-text">
+                                    <?= $products[10]["description"] ?>
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#nachoPowerBowlModal">
+                                            View
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">
+                                            Add
+                                        </button>
+                                    </div>
+                                    <small class="text-muted"><?= $products[10]["price"] ?></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="nachoPowerBowlModal" tabindex="-1" aria-labelledby="nachoPowerBowlLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="nachoPowerBowlLabel">
+                                        <?= $products[10]["product_name"] ?>
+                                    </h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="rounded mx-auto d-block" style="width: 90%" src="product_images/<?= $products[10]["image"] ?>" alt="nacho-power-bowl" />
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal End -->
+                    <div class="col">
+                        <div class="card shadow-sm h-100">
+                            <img class="bd-placeholder-img card-img-top" style="width: 100%" src="product_images/<?= $products[11]["image"] ?>" alt="santa-fé-power-bowl" />
+
+                            <div class="card-body">
+                                <h4 class="text-center"><?= $products[11]["product_name"] ?></h4>
+                                <p class="card-text">
+                                    <?= $products[11]["description"] ?>
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#santafepowerbowlModal">
+                                            View
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">
+                                            Add
+                                        </button>
+                                    </div>
+                                    <small class="text-muted"><?= $products[11]["price"] ?></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="santafepowerbowlModal" tabindex="-1" aria-labelledby="santafepowerbowlLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="santafepowerbowlLabel">
+                                        <?= $products[11]["product_name"] ?>
+                                    </h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="rounded mx-auto d-block" style="width: 90%" src="product_images/<?= $products[11]["image"] ?>" alt="santa-fé-power-bowl" />
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal End -->
                 </div>
             </div>
         </div>
