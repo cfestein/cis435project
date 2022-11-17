@@ -50,30 +50,34 @@
                 <i class="bi bi-telephone me-2 mb-5"></i>(313) 583-6330
               </div>
 
-              <form class="form-signin w-100 m-auto">
+              <form
+                class="form-signin w-100 m-auto"
+                method="POST"
+                action="form-submit.php"
+              >
                 <div class="form-floating">
                   <input
                     type="text"
                     class="form-control"
-                    id="floatingName"
+                    id="fname"
                     placeholder="name"
+                    name="fname"
                   />
-                  <label class="text-muted" for="floatingName">Name</label>
+                  <label class="text-muted" for="fname">Name</label>
                 </div>
                 <div class="form-floating">
                   <input
                     type="email"
                     class="form-control"
-                    id="floatingInput"
+                    id="email"
                     placeholder="name@example.com"
+                    name="email"
                   />
-                  <label class="text-muted" for="floatingInput"
-                    >Email address</label
-                  >
+                  <label class="text-muted" for="email">Email address</label>
                 </div>
-              </form>
-              <form class="form-signin w-100 m-auto">
-                <div class="form-floating">
+                <!-- </form>
+              <form class="form-signin w-100 m-auto"> -->
+                <!-- <div class="form-floating">
                   <input
                     type="text"
                     class="form-control"
@@ -101,9 +105,9 @@
                   <label class="text-muted" for="floatingMessage"
                     >Your Message</label
                   >
-                </div>
+                </div> -->
+                <button type="submit" class="btn btn-primary">Send</button>
               </form>
-              <button class="btn btn-primary">Send</button>
             </div>
             <div class="col-md-6 d-none d-lg-block">
               <img class="" src="images/other/map.png" alt="" height="500" />
