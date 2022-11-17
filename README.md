@@ -16,8 +16,8 @@ This project is intended to be used by the following companies:
 
 ## Authors
 
-- Ali Hazime
-- Fatima Kourani
+- [Ali Hazime](https://www.github.com/HA3IME)
+- [Fatima Kourani](https://www.github.com/Kourani55)
 - [Christopher Stein](https://www.github.com/cfestein)
 
 ## 🛠 Skills
