@@ -35,11 +35,11 @@ $statement1->closeCursor();
             $("button").click(function(e) {
                 e.preventDefault();
                 $.ajax({
-                    type: "GET",
-                    url: "http://umd-cis435s1.engin.umd.umich.edu/group9/test.php",
-                    // data: {
-                    //     category_id: $(this).val(), // <- Note: use of 'this' here
-                    // },
+                    type: "POST",
+                    url: "test.php",
+                    data: {
+                         product_id: $(this).val() // <- Note: use of 'this' here
+                     },
                     success: function(result) {
                         alert('Added to your cart');
                     },
@@ -139,7 +139,7 @@ $statement1->closeCursor();
                                             <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#<?= $row['product_id'] ?>">
                                                 View
                                             </button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                            <button type="button" class="add"  value="<?= $row['product_id'] ?>">
                                                 Add
                                             </button>
                                         </div>
