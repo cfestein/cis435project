@@ -6,6 +6,7 @@ if(isset($_POST['product_id'])){
         $_SESSION['cart'] = array();
     }
     array_push($_SESSION['cart'],$_POST['product_id']);
+    
     //include_once("db.inc");
 }
 /*$category_id = filter_input(INPUT_GET, 'category_id', FILTER_VALIDATE_INT);
