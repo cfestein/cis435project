@@ -1,28 +1,37 @@
 <?php include('partials/navbar.php') ?>
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Product Image</th>
-            <th scope="col">Product #</th>
-            <th scope="col">Product Name</th>
-            <th scope="col">Product Description</th>
-            <th scope="col">Price</th>
-            <th scope="col">Add</th>
-            <th scope="col">Delete</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($products as $product) { ?>
+<div class="container-fluid">
+    <table class="table mt-5 text-center table-striped table-hover">
+        <thead>
             <tr>
-                <th scope="row" style="width: 50px;"><?php $product['image'] ?></th>
-                <td><?php $product['product_id'] ?> </td>
-                <td><?php $product['prodcut_name'] ?></td>
-                <td><?php $product['product_description'] ?></td>
-                <td><?php $product['price'] ?></td>
-                <td><button type="submit" class="btn btn-primary btn-sm">Add</button></td>
-                <td><button type="submit" class="btn btn-danger btn-sm">Delete</button></td>
+
+                <th scope="col">ID #</th>
+                <th scope="col">Product Image</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Product Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
             </tr>
-        <?php } ?>
-    </tbody>
-</table>
+        </thead>
+        <tbody class="table-group-divider">
+            <?php foreach ($products as $product) { ?>
+                <tr>
+
+                    <td><?= $product['product_id'] ?> </td>
+                    <th scope="row"><img class="bd-placeholder-img card-img-top" style="width: 150px;" src="product_images/<?= $product["image"] ?>" /></th>
+                    <td><?= $product['product_name'] ?></td>
+                    <td><?= $product['description'] ?></td>
+                    <td style="width=100px;">$ <?= number_format((float)$product["price"], 2, '.', '') ?></td>
+                    <td><button type="submit" class="btn btn-primary btn-sm">Edit</button></td>
+                    <td><button type="submit" class="btn btn-danger btn-sm">Delete</button></td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+    <button type="submit" class="d-grid gap-2 col-4 btn btn-primary btn-lg justify-content-center mb-5 mt-5 mx-auto">ADD</button>
+</div>
+
+<script>
+    $("#checkout_button").hide();
+</script>
 <?php include('partials/footer.php') ?>

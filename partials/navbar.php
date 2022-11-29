@@ -99,7 +99,7 @@ $statement3->closeCursor();
                     </li>
                 </ul>
 
-                <button class="btn btn-lg btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" onclick="window.location.href='shopping-cart.php'">
+                <button id="checkout_button" class="btn btn-lg btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" onclick="window.location.href='shopping-cart.php'">
                     <i class="bi bi-cart-fill"> </i>Cart
                 </button>
             </div>
