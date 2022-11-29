@@ -1,31 +1,39 @@
 <?php
 session_start();
+if(empty($_SESSION['cart'])){
+  $_SESSION['cart'] = array();
+}
 //var_dump($_SESSION['cart']);
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
-include_once("db.inc");
-$wherein=empty($whereIn);
-$whereIn = implode(',',$_SESSION['cart']);
-$query = "SELECT * FROM Products WHERE product_id IN ($whereIn)";
-//echo $query;
-$statement1 = $db->prepare($query);
-$statement1->execute();
-
-$products = $statement1->fetchAll();
-
-$statement1->closeCursor();
 $subtotal = 0;
-foreach($products as $row){
-  $subtotal += $row['price'];
+$tax = 0;
+$total = 0;
+if(!empty($_SESSION['cart'])){
+  include_once("db.inc");
+  $wherein=empty($whereIn);
+  $whereIn = implode(',',$_SESSION['cart']);
+  $query = "SELECT * FROM Products WHERE product_id IN ($whereIn)";
+  //echo $query;
+  $statement1 = $db->prepare($query);
+  $statement1->execute();
+
+  $products = $statement1->fetchAll();
+
+  $statement1->closeCursor();
+  $subtotal = 0;
+  foreach($products as $row){
+    $subtotal += $row['price'];
+  }
+  $subtotal = number_format((float)$subtotal, 2, '.','');
+  $tax = $subtotal * 0.06;
+  $tax = number_format((float)$tax, 2, '.','');
+  $total = $subtotal + $tax;
+  $total = number_format((float)$total, 2, '.','');
 }
-$subtotal = number_format((float)$subtotal, 2, '.','');
-$tax = $subtotal * 0.06;
-$tax = number_format((float)$tax, 2, '.','');
-$total = $subtotal + $tax;
-$total = number_format((float)$total, 2, '.','');
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -97,7 +105,7 @@ $total = number_format((float)$total, 2, '.','');
             <div class="content">
                 <div class="row">
                 <div class="col-md-12 col-lg-8">
-                <?php foreach($products as $row) { ?>
+                <?php if(!empty($products)){foreach($products as $row) { ?>
                     <div class="items">
                     <div class="product">
                         <div class="row">
@@ -145,7 +153,7 @@ $total = number_format((float)$total, 2, '.','');
                         </div>
                         </div>
                     </div>
-                <?php }?>
+                <?php }}?>
               <div class="col-md-12 col-lg-4">
                 <div class="summary">
                   <h3>Summary</h3>

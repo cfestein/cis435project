@@ -30,23 +30,26 @@ $statement1->closeCursor();
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     <!-- Add Button Script -->
-    <script type="text/javascript" language="javascript">
+    <script type="text/javascript"  language="javascript">
         $(document).ready(function() {
             $("button").click(function(e) {
                 e.preventDefault();
-                $.ajax({
-                    type: "POST",
-                    url: "test.php",
-                    data: {
-                         product_id: $(this).val() // <- Note: use of 'this' here
-                     },
-                    success: function(result) {
-                        alert('Added to your cart');
-                    },
-                    error: function(result) {
-                        alert('error');
-                    }
-                })
+                var btnClass = $(this).attr('class');
+                if(btnClass == "add"){
+                    $.ajax({
+                        type: "POST",
+                        url: "test.php",
+                        data: {
+                            product_id: $(this).val() // <- Note: use of 'this' here
+                        },
+                        success: function(result) {
+                            alert('Added to your cart');
+                        },
+                        error: function(result) {
+                            alert('error');
+                        }
+                    })
+                }                
             });
         });
     </script>
@@ -88,7 +91,7 @@ $statement1->closeCursor();
                     </li>
                 </ul>
 
-                <button class="btn btn-lg btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" onclick="location.href='../pages/shopping-cart.html'">
+                <button class="btn btn-lg btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" onclick="location.href='../shopping-cart.php'">
                     <i class="bi bi-cart-fill"> </i>Cart
                 </button>
             </div>
@@ -139,7 +142,7 @@ $statement1->closeCursor();
                                             <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#<?= $row['product_id'] ?>">
                                                 View
                                             </button>
-                                            <button type="button" class="add"  value="<?= $row['product_id'] ?>">
+                                            <button type="button" class="add" value="<?= $row['product_id'] ?>">
                                                 Add
                                             </button>
                                         </div>
