@@ -7,6 +7,8 @@
             <th scope="col">Product Name</th>
             <th scope="col">Product Description</th>
             <th scope="col">Price</th>
+            <th scope="col">Add</th>
+            <th scope="col">Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +19,8 @@
                 <td><?php $product['prodcut_name'] ?></td>
                 <td><?php $product['product_description'] ?></td>
                 <td><?php $product['price'] ?></td>
+                <td><button type="submit" class="btn btn-primary btn-sm">Add</button></td>
+                <td><button type="submit" class="btn btn-danger btn-sm">Delete</button></td>
             </tr>
         <?php } ?>
     </tbody>
