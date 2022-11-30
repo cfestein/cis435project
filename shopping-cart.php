@@ -50,6 +50,33 @@ if(!empty($_SESSION['cart'])){
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/shopping-cart.css" />
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script type="text/javascript"  language="javascript">
+        $(document).ready(function() {
+            $("button").click(function(e) {
+                e.preventDefault();
+                var btnClass = $(this).attr('class');
+                if(btnClass == "btn btn-primary btn-lg btn-block"){
+                    $.ajax({
+                        type: "POST",
+                        url: "cart.php",
+                        data: {
+                            products: $(this).val() // <- Note: use of 'this' here
+                        },
+                        success: function(result) {
+                            alert('Added to your cart');
+                        },
+                        error: function(result) {
+                            alert('error');
+                        }
+                    })
+                }                
+            });
+        });
+    </script>
+
   </head>
   <body>
     <!-- NavBar -->
@@ -172,6 +199,7 @@ if(!empty($_SESSION['cart'])){
                   <button
                     type="button"
                     class="btn btn-primary btn-lg btn-block"
+                    value="1"
                   >
                     Checkout
                   </button>
