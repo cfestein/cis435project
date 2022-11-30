@@ -91,20 +91,20 @@ if(!empty($_SESSION['cart'])){
             class="nav col-md-7 align-items-center justify-content-left mb-3 mb-md-0"
           >
             <li class="nav-item">
-              <a href="index.html" class="nav-link px-2 fw-bold text-muted"
+              <a href="index.php" class="nav-link px-2 fw-bold text-muted"
                 >Home</a
               >
             </li>
             <li class="nav-item">
-              <a href="menu.html" class="nav-link px-2 text-muted">Menu</a>
+              <a href="menu.php" class="nav-link px-2 text-muted">Menu</a>
             </li>
             <li class="nav-item">
-              <a href="index.html#hours" class="nav-link px-2 text-muted"
+              <a href="index.php#hours" class="nav-link px-2 text-muted"
                 >Hours</a
               >
             </li>
             <li class="nav-item">
-              <a href="index.html#contact" class="nav-link px-2 text-muted"
+              <a href="contact-us.php" class="nav-link px-2 text-muted"
                 >Contact Us</a
               >
             </li>

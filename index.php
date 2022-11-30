@@ -19,7 +19,7 @@
                                 & go items, assorted beverages, and Starbucks.
                             </p>
                             <p>
-                                <a href="menu.html" class="btn btn-lg btn-primary my-2">Start Order</a>
+                                <a href="menu.php" class="btn btn-lg btn-primary my-2">Start Order</a>
                             </p>
                         </div>
                     </div>
