@@ -139,9 +139,6 @@ $statement1->closeCursor();
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#<?= $row['product_id'] ?>">
-                                                View
-                                            </button>
                                             <button type="button" class="add" value="<?= $row['product_id'] ?>">
                                                 Add
                                             </button>
