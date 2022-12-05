@@ -155,7 +155,7 @@ $searchq = '';
                                                 Add
                                             </button>
                                         </div>
-                                        <small class="text-muted">$ <?= $row["price"] ?></small>
+                                        <small class="text-muted">$ <?= number_format((float)$row['price'], 2, '.','') ?></small>
                                     </div>
                                 </div>
                             </div>

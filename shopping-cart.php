@@ -216,14 +216,14 @@ if(!empty($_SESSION['cart'])){
                                     <a href="#" class="lato-bold-blue-whale-18px"
                                     ><?= $row['product_name']?></a
                                     >
-                                    <div class="product-info">
+                                    <!--<div class="product-info">
                                     <div>
                                         Description:
                                         <span class="value"
-                                        ><?= $row['description']?></span
+                                        ><// $row['description']?></span
                                         >
                                     </div>
-                                    </div>
+                                    </div>-->
                                 </div>
                                 </div>
 
