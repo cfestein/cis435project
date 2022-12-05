@@ -5,10 +5,10 @@ error_reporting(E_ALL);
 
 include_once("db.inc");
 $searchq = "";
-if(isset($_POST['search'])){
+if (isset($_POST['search'])) {
     $searchq = $_POST['search'];
     //input sanitization 
-    $searchq = preg_replace("#[^a-z]#i","",$searchq);
+    $searchq = preg_replace("#[^a-z]#i", "", $searchq);
 }
 
 $query = "SELECT * FROM Products WHERE product_name LIKE '%$searchq%' OR description LIKE '%$searchq%'";
@@ -20,7 +20,7 @@ $products = $statement1->fetchAll();
 //     print_r($product);
 // }
 $statement1->closeCursor();
-$searchq ='';
+$searchq = '';
 
 ?>
 
@@ -38,12 +38,12 @@ $searchq ='';
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     <!-- Add Button Script -->
-    <script type="text/javascript"  language="javascript">
+    <script type="text/javascript" language="javascript">
         $(document).ready(function() {
             $("button").click(function(e) {
                 e.preventDefault();
                 var btnClass = $(this).attr('class');
-                if(btnClass == "add"){
+                if (btnClass == "add") {
                     $.ajax({
                         type: "POST",
                         url: "test.php",
@@ -57,7 +57,7 @@ $searchq ='';
                             alert('error');
                         }
                     })
-                }                
+                }
             });
         });
     </script>
@@ -99,7 +99,7 @@ $searchq ='';
                     </li>
                 </ul>
 
-                <button class="btn btn-lg btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" onclick="location.href='../shopping-cart.php'">
+                <button class="btn btn-lg btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" onclick="window.location.href='shopping-cart.php'">
                     <i class="bi bi-cart-fill"> </i>Cart
                 </button>
             </div>
@@ -122,6 +122,10 @@ $searchq ='';
                                     Choose from a variety of our handmade options. We have you
                                     covered at McKinley Café.
                                 </p>
+                                <form action="menu.php" class="btn-group me-2" method="POST">
+                                    <input type="text" name="search" class="form-control me-5" placeholder="Search for Products">
+                                    <input type="submit" class="btn btn-lg btn-primary my-2" style="border-radius: .5rem;" value="Search">
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -131,10 +135,6 @@ $searchq ='';
         <!-- Jumbotron End -->
     </main>
     <!-- Menu -->
-    <form action="menu.php" method="post">
-        <input type="text" name="search" placeholder="Search for products">
-        <input type="submit" value="Search"/>
-    </form>
     <section>
         <div class="album py-5 bg-light">
             <div class="container">
