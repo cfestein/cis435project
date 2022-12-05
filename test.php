@@ -5,9 +5,15 @@ if(isset($_POST['product_id'])){
     session_start();
     if(empty($_SESSION['cart'])){
         $_SESSION['cart'] = array();
+        $_SESSION['quants'] = array();
     }
-    array_push($_SESSION['cart'],$_POST['product_id']);
-    
+    if(isset($_SESSION['quants'][$_POST['product_id']])){
+        $_SESSION['quants'][$_POST['product_id']]++;
+    }
+    else{
+        array_push($_SESSION['cart'],$_POST['product_id']);
+        $_SESSION['quants'][$_POST['product_id']] = 1;
+    }
     //include_once("db.inc");
 }
 /*$category_id = filter_input(INPUT_GET, 'category_id', FILTER_VALIDATE_INT);

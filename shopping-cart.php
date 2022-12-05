@@ -4,6 +4,7 @@ if(empty($_SESSION['cart'])){
   $_SESSION['cart'] = array();
 }
 //var_dump($_SESSION['cart']);
+//var_dump($_SESSION['quants']);
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -11,21 +12,26 @@ error_reporting(E_ALL);
 $subtotal = 0;
 $tax = 0;
 $total = 0;
+$ids = array();
 if(!empty($_SESSION['cart'])){
   include_once("db.inc");
   $wherein=empty($whereIn);
   $whereIn = implode(',',$_SESSION['cart']);
   $query = "SELECT * FROM Products WHERE product_id IN ($whereIn)";
-  //echo $query;
+
   $statement1 = $db->prepare($query);
   $statement1->execute();
+
+ //echo $query;
+ // $statement1 = $db->prepare($query);
+ // $statement1->execute();
 
   $products = $statement1->fetchAll();
 
   $statement1->closeCursor();
   $subtotal = 0;
   foreach($products as $row){
-    $subtotal += $row['price'];
+    $subtotal += ($row['price'] * $_SESSION['quants'][$row['product_id']]);
   }
   $subtotal = number_format((float)$subtotal, 2, '.','');
   $tax = $subtotal * 0.06;
@@ -50,15 +56,22 @@ if(!empty($_SESSION['cart'])){
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/shopping-cart.css" />
-
+    <style>
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    </style>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     <script type="text/javascript"  language="javascript">
         $(document).ready(function() {
             $("button").click(function(e) {
                 e.preventDefault();
-                var btnClass = $(this).attr('class');
-                if(btnClass == "btn btn-primary btn-lg btn-block"){
+                var btnClass = $(this).attr('id');
+                //if button is checkout
+                if(btnClass == "checkout"){
                     $.ajax({
                         type: "POST",
                         url: "cart.php",
@@ -66,15 +79,67 @@ if(!empty($_SESSION['cart'])){
                             products: $(this).val() // <- Note: use of 'this' here
                         },
                         success: function(result) {
-                            alert('Added to your cart');
+                            alert('order test');
                         },
                         error: function(result) {
                             alert('error');
                         }
                     })
-                }                
+                }
+                //if button is increment quantity 
+                if(btnClass == "add"){
+                    $.ajax({
+                        type: "POST",
+                        url: "add.php",
+                        data: {
+                            product_id: $(this).val() // <- Note: use of 'this' here
+                        },
+                        success: function(result) {
+                            //alert('add test');
+                        },
+                        error: function(result) {
+                            alert('error');
+                        }
+                    })
+                }
+                //if button is decrement quantity 
+                if(btnClass == "sub"){
+                    $.ajax({
+                        type: "POST",
+                        url: "subtract.php",
+                        data: {
+                            product_id: $(this).val() // <- Note: use of 'this' here
+                        },
+                        success: function(result) {
+                          //alert('subtract test');
+                        },
+                        error: function(result) {
+                            alert('error');
+                        }
+                    })
+                }
+                //if button is remove item
+                if(btnClass == "remove"){
+                    $.ajax({
+                        type: "POST",
+                        url: "remove.php",
+                        data: {
+                            product_id: $(this).val() // <- Note: use of 'this' here
+                        },
+                        success: function(result) {
+                          //alert('subtract test');
+                        },
+                        error: function(result) {
+                            alert('error');
+                        }
+                    })
+                }
+                $(document).ajaxStop(function(){
+                  window.location.reload();
+                });                      
             });
         });
+        
     </script>
 
   </head>
@@ -167,15 +232,41 @@ if(!empty($_SESSION['cart'])){
                                 <input
                                     id="quantity"
                                     type="number"
-                                    value="1"
+                                    value="<?= $_SESSION['quants'][$row['product_id']]?>"
                                     class="form-control quantity-input"
+                                    min="1"
+                                    readonly
                                 />
+                                <button
+                                  type="button"
+                                  class="btn btn-primary"
+                                  value="<?= $row['product_id'] ?>"
+                                  id="sub"
+                                >
+                                  <<
+                                </button>                                
+                                <button
+                                  type="button"
+                                  class="btn btn-primary"
+                                  value="<?= $row['product_id'] ?>"
+                                  id="add"
+                                >
+                                  >>
+                                </button>
                                 </div>
 
                                 <div class="col-md-3 price">
-                                <span><p>$<?= $row['price']?> </p></span>
+                                <span><p>$<?= number_format((float)$row['price']*$_SESSION['quants'][$row['product_id']], 2, '.','')?> </p></span>
+                                <button 
+                                type="button"
+                                class="btn btn-primary"
+                                value="<?= $row['product_id'] ?>"
+                                id="remove"
+                                > 
+                                Remove 
+                                </button>
                                 </div>
-                            </div>
+                            </div>                      
                             </div>
                         </div>
                         </div>
@@ -198,6 +289,7 @@ if(!empty($_SESSION['cart'])){
                   </div>
                   <button
                     type="button"
+                    id="checkout"
                     class="btn btn-primary btn-lg btn-block"
                     value="1"
                   >
