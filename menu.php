@@ -43,7 +43,7 @@ $searchq = '';
             $("button").click(function(e) {
                 e.preventDefault();
                 var btnClass = $(this).attr('class');
-                if (btnClass == "add") {
+                if (btnClass == "add btn btn-sm btn-outline-secondary mt-auto") {
                     $.ajax({
                         type: "POST",
                         url: "test.php",
@@ -151,7 +151,7 @@ $searchq = '';
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <button type="button" class="add" value="<?= $row['product_id'] ?>">
+                                            <button type="button" class="add btn btn-sm btn-outline-secondary mt-auto" value="<?= $row['product_id'] ?>">
                                                 Add
                                             </button>
                                         </div>
