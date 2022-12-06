@@ -51,9 +51,9 @@
                                         <!-- <button type="button" class="btn btn-sm btn-outline-secondary mt-auto" data-bs-toggle="modal" data-bs-target="#<?= (string)$special['product_id'] ?>">
                                             View
                                         </button> -->
-                                        <button type="button" class="btn btn-sm btn-outline-secondary mt-auto">
+                                        <!--<button type="button" class="btn btn-sm btn-outline-secondary mt-auto">
                                             Add
-                                        </button>
+                                        </button>-->
                                     </div>
                                     <small class="text-muted">$ <?= number_format((float)$special["price"], 2, '.', '') ?></small>
                                 </div>
@@ -138,9 +138,9 @@
                                             <!-- <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#<?= strval($favorite['product_id']) ?>">
                                                 View
                                             </button> -->
-                                            <button type="button" class="add btn btn-sm btn-outline-secondary" value="<?= $favorite['product_id'] ?>">
+                                            <!--<button type="button" class="add btn btn-sm btn-outline-secondary" value="<?= $favorite['product_id'] ?>">
                                                 Add
-                                            </button>
+                                            </button>-->
                                         </div>
                                         <small class="text-muted">$ <?= number_format((float)$favorite["price"], 2, '.', '') ?></small>
                                     </div>
@@ -176,7 +176,7 @@
     </section>
     <!-- End Fanfavorites -->
     <!-- Meal Cards -->
-    <div id="carouselexample" class="carousel slide" data-ride="carousel">
+    <!--<div id="carouselexample" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img class="d-block w-100 bground-img" src="images/background/employee.jpg" alt="First slide" />
@@ -187,8 +187,8 @@
                                 Meal Cards Accepted
                             </h1>
                             <p class="lead col-lg-6 mx-auto text-dark">
-                                You may purchas a Meal Card on the App or at McKinley Café
-                                to use at all retail food loactions on campus. Funds may be
+                                You may purchase a Meal Card on the App or at McKinley Café
+                                to use at all retail food locations on campus. Funds may be
                                 added to the App remotely at your convienence.
                             </p>
                             <p>
@@ -199,11 +199,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <!-- Meal Cards End-->
 </main>
 <!-- Newsletter -->
-<div class="py-5 text-center container">
+<!--<div class="py-5 text-center container">
     <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
             <a id="contact">
@@ -218,7 +218,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 <!-- Newsletter End-->
 <!-- Location/Hours -->
 <div class="container-fluid location">

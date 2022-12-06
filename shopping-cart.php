@@ -40,6 +40,12 @@ if(!empty($_SESSION['cart'])){
   $total = number_format((float)$total, 2, '.','');
 }
 
+
+$tz = 'America/New_York';
+$timestamp = time();
+$dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
+$dt->setTimestamp($timestamp); //adjust the object to correct timestamp
+$dt->add(new DateInterval('PT25M'));
 ?>
 <!DOCTYPE html>
 <html>
@@ -72,11 +78,14 @@ if(!empty($_SESSION['cart'])){
                 var btnClass = $(this).attr('id');
                 //if button is checkout
                 if(btnClass == "checkout"){
-                    $.ajax({
+                    window.location="http://mckinleycafeonline.fall2022web.tech/checkout.php";
+                    document.getElementById('form').submit();
+                    /*$.ajax({
                         type: "POST",
                         url: "cart.php",
                         data: {
-                            products: $(this).val() // <- Note: use of 'this' here
+                            total: $total
+                            time: $dt->format('Y-m-d H:i')
                         },
                         success: function(result) {
                             alert('order test');
@@ -84,7 +93,9 @@ if(!empty($_SESSION['cart'])){
                         error: function(result) {
                             alert('error');
                         }
-                    })
+                        
+                    })*/
+                    
                 }
                 //if button is increment quantity 
                 if(btnClass == "add"){
@@ -183,15 +194,7 @@ if(!empty($_SESSION['cart'])){
         <div class="container">
           <div class="block-heading">
             <h2>Your Cart</h2>
-            <?php 
-              $tz = 'America/New_York';
-              $timestamp = time();
-              $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
-              $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
-              $dt->add(new DateInterval('PT25M'));
-
-            ?>
-            <p>Estimated Pickup Time: <?php echo $dt->format('H:i'); ?></p>
+            <p>Estimated Pickup Time: <?php echo $dt->format('Y-m-d h:ia'); ?></p>
           </div>
           
             <div class="content">
@@ -220,7 +223,7 @@ if(!empty($_SESSION['cart'])){
                                     <div>
                                         Description:
                                         <span class="value"
-                                        ><// $row['description']?></span
+                                        ></?= $row['description']?></span
                                         >
                                     </div>
                                     </div>-->
@@ -291,10 +294,17 @@ if(!empty($_SESSION['cart'])){
                     type="button"
                     id="checkout"
                     class="btn btn-primary btn-lg btn-block"
-                    value="1"
+                    <?php
+                      if(empty($_SESSION['cart'])){?>
+                      disabled
+                      <?php }?>
                   >
                     Checkout
                   </button>
+                <form id="form" method="POST" action="checkout.php">
+                  <input type="hidden" name="time" value="<?= $dt->format('Y-m-d H:i') ?>">
+                  <input type="hidden" name="total" value="<?= $total ?>">
+                </form>
                 </div>
               </div>
             </div>
